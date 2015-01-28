@@ -442,7 +442,8 @@ var HFTServer = function(options, startedCallback) {
     });
   };
 
-  app.get(/^\/nm\/.*/, require("./browserify-static"));
+  app.get(/^\/nm\/.*/, require("./routers/browserify-static"));
+  app.get(/^\/amd\/.*/, require("./routers/amd-static"));
 
   addTemplateInsertedPath(app, /^\/games\/(.*?)\/index.html$/, 'controller', 'controller.html');
   addTemplateInsertedPath(app, /^\/games\/(.*?)\/gameview.html$/, 'game', 'game.html');
