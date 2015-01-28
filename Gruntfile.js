@@ -44,6 +44,8 @@ module.exports = function(grunt) {
                 'eslint-plugin-one-variable-per-var',
                 'eslint-plugin-require-trailing-comma',
             ],
+            ignore: true,
+            ignorePath: 'dev/conf/.eslintignore'
         },
     },
   });
@@ -54,4 +56,3 @@ module.exports = function(grunt) {
 
   grunt.registerTask('default', ['eslint', 'clean', 'jsdoc']);
 };
-

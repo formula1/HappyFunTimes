@@ -154,7 +154,9 @@ var HFTServer = function(options, startedCallback) {
 
   var send404 = function(res, msg) {
     msg = msg || '';
-    res.writeHead(404).write('404<br/>' + msg).end();
+    res.writeHead(404);
+    res.write('404<br/>' + msg);
+    res.end();
   };
 
   //function saveScreenshotFromDataURL(dataURL) {
@@ -439,6 +441,8 @@ var HFTServer = function(options, startedCallback) {
       });
     });
   };
+
+  app.get(/^\/nm\/.*/, require("./browserify-static"));
 
   addTemplateInsertedPath(app, /^\/games\/(.*?)\/index.html$/, 'controller', 'controller.html');
   addTemplateInsertedPath(app, /^\/games\/(.*?)\/gameview.html$/, 'game', 'game.html');

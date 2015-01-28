@@ -36,7 +36,7 @@ requirejs(
   [ 'hft/gameclient',
     'hft/misc/misc',
     'hft/misc/strings',
-    './semver',
+    '/nm/semver',
   ], function(
     GameClient,
     Misc,
@@ -247,6 +247,3 @@ requirejs(
     }
   }());
 });
-
-
-
